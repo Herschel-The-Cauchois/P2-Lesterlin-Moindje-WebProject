@@ -1,0 +1,21 @@
+body {
+    font-family: "Noto Sans", arial;
+}
+
+nav {
+    padding: 10px 0px;;
+    width: 100%;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+}
