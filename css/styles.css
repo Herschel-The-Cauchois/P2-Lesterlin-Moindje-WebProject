@@ -1,5 +1,16 @@
 body {
     font-family: "Noto Sans", arial;
+    background-color: rgb(194, 227, 255);
+}
+
+hr {
+    background-color: black;
+    height: 3px;
+    border: none;
+}
+
+section {
+    padding: 20px 18%;
 }
 
 nav {
@@ -18,4 +29,21 @@ nav ul {
 nav a {
     text-decoration: none;
     color: black;
+}
+
+.coloris {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+#colors img {
+    padding: auto; /* gonna have to change this, i'm trying to make the image centered but not the texts but it might not even look good so */
+}
+
+#bluetitle {
+    color: mediumturquoise;
+}
+
+#pinktitle {
+    color: hotpink;
 }
