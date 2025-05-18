@@ -47,3 +47,64 @@ nav a {
 #pinktitle {
     color: hotpink;
 }
+
+button {
+    background-color: rgb(153, 145, 234);
+    color: white;
+    padding: 1em;
+    border-radius: 4px;
+    border-color: rgb(153, 145, 234);
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+#inspect, #init {
+    display: flex;
+    align-content: center;
+    text-align: center;
+    height: auto;
+    width: auto;
+}
+
+#inspect > div {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 33%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
+    transform: translateY(-50%);
+}
+
+@keyframes slide-off {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+#init > div {
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 43%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
+    transform: translateY(-50%);
+}
+
+input[type="text"] {
+    border-radius: 4px;
+    border-color: darkcyan;
+}
+
+#ready {
+    background-color: burlywood;
+    color:black;
+    text-decoration: underline;
+}
+
+.bye-bye {
+    animation: slide-off 2s;
+}
