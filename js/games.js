@@ -4,17 +4,21 @@ var complete = 0;
 
 window.addEventListener("load", function() { //When page fully loaded, puts only html to start the game
     document.getElementById("inspect").style.display = "none";
+    document.getElementById("sliders").style.display = "none";
     document.getElementById("init").style.display = "flex"; //Makes initial stuff appear, disappears other sections
+    document.getElementById("init").classList.add("hello"); //Appearing animation
 
     document.getElementById("ready").addEventListener("click", function() { //button triggers game start
 
         console.log("Game start");
+        document.getElementById("init").classList.remove("hello");
         document.getElementById("init").classList.add("bye-bye"); //Adds init section to bye bye which triggers fading out animation
 
         setTimeout(function() { //After animation execution replaces with game
 
             document.getElementById("init").style.display = "none";
             document.getElementById("inspect").style.display = "flex";
+            document.getElementById("inspect").classList.add("hello");
 
             document.getElementById("inspect_f").addEventListener("click", function() { //Event listener for the second game
 
@@ -29,22 +33,26 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
                 wrong_answer.textContent = "Wrong ! Search more in depth. Hint : look out with inspect element...";
                 wrong_answer.style.margin = "auto";
 
-                if (answ2 === '0x76 0x61 0x71 0x75 0x69 0x74 0x61') {
+                if (answ2 === '0x76 0x61 0x71 0x75 0x69 0x74 0x61') { //If good answer
                     document.querySelector("#inspect > div").appendChild(good_answer);
-                    document.querySelector("#inspect > div").style.left = "17%";
+                    document.querySelector("#inspect > div").style.left = "17%"; //Changes alignement because when adding the child, it decenters the content
                     setTimeout(function() {
                         setTimeout(function() {
                             document.querySelector("#inspect").style.display = "none";
+                            document.querySelector("#sliders").style.display = "flex";
+
+                            document.getElementById("sliders").classList.add("hello");
                         } ,1800)
+                        document.getElementById("inspect").classList.remove("hello");
                         document.querySelector("#inspect").classList.add("bye-bye");
-                    }, 2200); //timeout to let the player long enough time to read, longer here since longer answer
-                } else {
+                    }, 3000); //timeout to let the player long enough time to read, longer here since longer answer
+                } else { //Wrong answer
                     document.querySelector("#inspect > div").appendChild(wrong_answer);
                     setTimeout(function() {
                         setTimeout(function() {
-                            document.querySelector("#inspect > div").removeChild(wrong_answer);
+                            document.querySelector("#inspect > div").removeChild(wrong_answer); //removes child
                         } ,1800)
-                        wrong_answer.classList.add("bye-bye");
+                        wrong_answer.classList.add("bye-bye"); //Launches animation
                     }, 1800); //timeout to let the player long enough time to read
                 }
             });

@@ -86,6 +86,16 @@ button:hover {
     }
 }
 
+@keyframes slide-on {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
+
 #init > div {
     margin: auto;
     position: absolute;
@@ -107,4 +117,8 @@ input[type="text"] {
 
 .bye-bye {
     animation: slide-off 2s;
+}
+
+.hello {
+    animation: slide-on 2s;
 }
