@@ -140,3 +140,13 @@ label {
     color: black;
     margin-top: 1em;
 }
+
+#sticky {
+    position: fixed;
+    bottom: 0.5em;
+}
+
+#skip {
+    background-color: gray;
+    color: white;
+}

@@ -2,18 +2,52 @@ const game1 = new Event("first_game"); //Declares event to signal
 const game2 = new Event("second_game");
 const game3 = new Event("third_game");
 const game4 = new Event("fourth_game");
+const end = new Event("final_screen");
 var game = 0;
 //Game method : create events for each game
 
 window.addEventListener("load", function() { //When page fully loaded, puts only html to start the game
     document.getElementById("inspect").style.display = "none";
     document.getElementById("sliders").style.display = "none";
+    document.getElementById("skip").style.display = "none";
     document.getElementById("init").style.display = "flex"; //Makes initial stuff appear, disappears other sections
     document.getElementById("init").classList.add("hello"); //Appearing animation
+
+    document.getElementById("skip").addEventListener("click", () => {
+        const displayArray = [document.getElementById("init"), document.getElementById("sliders"), document.getElementById("inspect"), document.getElementById("qte"), document.getElementById("quiz")]; //Array of displayable game elements
+        displayArray.forEach((elem) => { // For each game element, triggers fading out animation
+            elem.classList.remove("hello");
+            elem.classList.add("bye-bye");
+            setTimeout(() => {
+                elem.style.display = "none"; //Then removes them after a certain time
+            }, 1800);
+        });
+
+        setTimeout(() => { //To prevent overlap of fading in with removal of other elements, puts a delay
+            switch (game) { //Dispatch next game event
+                case 1:
+                    document.dispatchEvent(game2);
+                    break;
+                case 2:
+                    document.dispatchEvent(game3);
+                    break;
+                case 3:
+                    document.dispatchEvent(game4);
+                    break;
+                case 4:
+                    document.dispatchEvent(end);
+                    break;
+                default:
+                    console.log("this isn't supposed to happen.");
+                    break;
+            }
+        }, 2000)
+    });
 
     document.getElementById("ready").addEventListener("click", function() { //button triggers game start
         console.log("Game start");
         document.dispatchEvent(game1);
+        document.getElementById("skip").style.display = "block";
     });
 
 })
@@ -129,7 +163,7 @@ document.addEventListener("second_game", () => {
             setTimeout(function() {
                 setTimeout(function() {
                     document.getElementById("sliders").style.display = "none"; //Masks the sliders part once the game is done
-                    document.dispatchEvent("third_game"); //removes child
+                    document.dispatchEvent(game3); //removes child
                 } ,1800)
                 document.getElementById("sliders").classList.remove("hello");
                 document.getElementById("sliders").classList.add("bye-bye"); //Launches animation
