@@ -72,7 +72,7 @@ button:hover {
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 33%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
+    left: 25%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
     transform: translateY(-50%);
 }
 
