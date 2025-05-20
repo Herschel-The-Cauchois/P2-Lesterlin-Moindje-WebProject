@@ -1,5 +1,4 @@
-var game = 0;
-var complete = 0;
+const game1 = new Event("first_game");
 //Game method : add event listeners & reveal other divs step by step
 
 window.addEventListener("load", function() { //When page fully loaded, puts only html to start the game
@@ -11,6 +10,12 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
     document.getElementById("ready").addEventListener("click", function() { //button triggers game start
 
         console.log("Game start");
+        document.dispatchEvent(game1);
+    });
+})
+
+document.addEventListener("first_game", () => {
+    console.log("Game starts too !");
         document.getElementById("init").classList.remove("hello");
         document.getElementById("init").classList.add("bye-bye"); //Adds init section to bye bye which triggers fading out animation
 
@@ -57,10 +62,7 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
                 }
             });
         }, 1800);
-    });
-})
-
-
+});
 
 /* while (complete != 1) { //Loop that will run the program until all the games are done
     switch(game) {

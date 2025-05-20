@@ -60,7 +60,7 @@ button:hover {
     cursor: pointer;
 }
 
-#inspect, #init {
+#inspect, #init, #sliders {
     display: flex;
     align-content: center;
     text-align: center;
@@ -74,6 +74,10 @@ button:hover {
     top: 50%;
     left: 25%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
     transform: translateY(-50%);
+}
+
+#sliders > div {
+    margin: auto;
 }
 
 @keyframes slide-off {
@@ -121,4 +125,12 @@ input[type="text"] {
 
 .hello {
     animation: slide-on 2s;
+}
+
+#sliders > div > label {
+    text-decoration: underline;
+}
+
+#CO2disp, #Aciddisp {
+    text-decoration: none;
 }
