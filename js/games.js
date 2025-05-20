@@ -2,7 +2,6 @@ const game1 = new Event("first_game"); //Declares event to signal
 const game2 = new Event("second_game");
 const game3 = new Event("third_game");
 const game4 = new Event("fourth_game");
-const game5 = new Event("fifth_game");
 var game = 0;
 //Game method : create events for each game
 
@@ -49,6 +48,7 @@ document.addEventListener("first_game", () => { //First game event, manages code
                 document.querySelector("#inspect > div").style.left = "17%"; //Changes alignement because when adding the child, it decenters the content
                 setTimeout(function() {
                     setTimeout(function() {
+                        document.querySelector("#inspect").style.display = "none";
                         document.dispatchEvent(game2);
                     } ,1800)
                     document.getElementById("inspect").classList.remove("hello");
@@ -69,8 +69,8 @@ document.addEventListener("first_game", () => { //First game event, manages code
 
 document.addEventListener("second_game", () => {
     game = 2;
-    document.querySelector("#inspect").style.display = "none";
     document.querySelector("#sliders").style.display = "flex";
+    document.getElementById("sl_f").style.display = "inline-block";
     document.getElementById("sliders").classList.add("hello");
 
     document.querySelector("input[name='CO2']").oninput = function() { //Automatic slider value displayer, we need to put it here because we need the page to be loaded
@@ -87,6 +87,54 @@ document.addEventListener("second_game", () => {
         const answ2b = document.querySelector("input[name='Acid']").value;
         console.log(answ2a);
         console.log(answ2b);
+        document.getElementById("sl_f").style.display = "none"; //Removes now useless button
+
+        const imageg2 = document.createElement("img"); //Creates a container for the site's answer
+        const resultsec = document.createElement("section");
+        const presponse = document.createElement("p");
+        const head = document.createElement("h2");
+        const next = document.createElement("button");
+        resultsec.appendChild(head);
+        resultsec.appendChild(imageg2);
+        resultsec.appendChild(presponse);
+        resultsec.appendChild(next);
+        document.querySelector("#sliders > div").appendChild(resultsec);
+        resultsec.style.backgroundColor = "rgba(0, 0, 0, 0.7)"; //Gives the elements a little style
+        resultsec.style.marginTop = "2em";
+        resultsec.style.padding = "1em";
+        resultsec.style.borderRadius = "4px";
+        resultsec.style.color = "white";
+        resultsec.style.width = "40%";
+        resultsec.style.display = "inline-block";
+        imageg2.style.objectFit = "contain"; //Make the future image contained inside the container
+        imageg2.style.borderRadius = "4px";
+        imageg2.style.maxHeight = "60%";
+        imageg2.style.maxWidth = "70%";
+        next.textContent = "Next Game";
+
+        if (answ2a >= 500 && answ2b >= 426) {
+            imageg2.src = "https://th.bing.com/th/id/OIP.-lO2NDmY1mcAHllMALUckQHaFj?rs=1&pid=ImgDetMain";
+            imageg2.placeholder = "Image of dead corals in the sea";
+            head.textContent = "Well, well, your coral is dead...";
+            presponse.textContent = "As climate change goes on, CO2 concentration in the atmosphere increases, which not only makes temperatures but also acidification of the water goes up... Deadly cocktail for our biodiversity rich friends.";
+        } else {
+            imageg2.src = "https://th.bing.com/th/id/R.49ff8b5b8246616daa83163e0d1a2468?rik=ZNaVu4XKw8oQmQ&pid=ImgRaw&r=0";
+            imageg2.placeholder = "Image of living corals in the sea";
+            head.textContent = "And yet, it lives !";
+            presponse.textContent = "If we succeed to contain our CO2 emissions, we might prevent the oceans becoming too hot and acid, which might make our coral friend go extinct. A Victory for biodiversity !";
+        }
+
+        next.addEventListener("click", () => {
+            console.log("Tik tok !");
+            setTimeout(function() {
+                setTimeout(function() {
+                    document.getElementById("sliders").style.display = "none"; //Masks the sliders part once the game is done
+                    document.dispatchEvent("third_game"); //removes child
+                } ,1800)
+                document.getElementById("sliders").classList.remove("hello");
+                document.getElementById("sliders").classList.add("bye-bye"); //Launches animation
+            }, 1800); //timeout to let the player long enough time to read
+        });
     });
 })
 
