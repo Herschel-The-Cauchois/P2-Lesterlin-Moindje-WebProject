@@ -127,10 +127,16 @@ input[type="text"] {
     animation: slide-on 2s;
 }
 
-#sliders > div > label {
+label {
     text-decoration: underline;
 }
 
 #CO2disp, #Aciddisp {
     text-decoration: none;
+}
+
+#sl_f {
+    background-color: azure;
+    color: black;
+    margin-top: 1em;
 }
