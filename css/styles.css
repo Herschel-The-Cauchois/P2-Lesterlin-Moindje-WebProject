@@ -173,3 +173,11 @@ input[type="text"] {
 #headabout h2 {
     font-size: 50px;
 }
+
+tr {
+    font-size: 30px;
+}
+
+table {
+    border: blue solid 5px;
+}
