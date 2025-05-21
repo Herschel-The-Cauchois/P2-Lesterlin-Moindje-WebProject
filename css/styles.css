@@ -127,6 +127,8 @@ input[type="text"] {
 
 #headstat {
     padding: auto auto 15px auto;
+    display: flex;
+    flex-direction: row;
 }
 
 #headstat p {
@@ -134,8 +136,11 @@ input[type="text"] {
     color: white;
 }
 
-#headabout h2 {
-    font-size: 50px;
+#headstattext {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px 75px;
+    width: 800px;
 }
 
 #dolphin {
@@ -163,4 +168,8 @@ input[type="text"] {
 #headabout img {
     height: 25%;
     width: 25%;
+}
+
+#headabout h2 {
+    font-size: 50px;
 }
