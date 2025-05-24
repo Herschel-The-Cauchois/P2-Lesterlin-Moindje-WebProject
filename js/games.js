@@ -1,7 +1,6 @@
 const game1 = new Event("first_game"); //Declares event to signal 
 const game2 = new Event("second_game");
 const game3 = new Event("third_game");
-const game4 = new Event("fourth_game");
 const end = new Event("final_screen");
 var game = 0;
 //Game method : create events for each game
@@ -10,11 +9,13 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
     document.getElementById("inspect").style.display = "none";
     document.getElementById("sliders").style.display = "none";
     document.getElementById("skip").style.display = "none";
+    document.getElementById("quiz").style.display = "none";
+    document.querySelector("form").reset(); //Resets quiz form
     document.getElementById("init").style.display = "flex"; //Makes initial stuff appear, disappears other sections
     document.getElementById("init").classList.add("hello"); //Appearing animation
 
     document.getElementById("skip").addEventListener("click", () => {
-        const displayArray = [document.getElementById("init"), document.getElementById("sliders"), document.getElementById("inspect"), document.getElementById("qte"), document.getElementById("quiz")]; //Array of displayable game elements
+        const displayArray = [document.getElementById("init"), document.getElementById("sliders"), document.getElementById("inspect"), document.getElementById("end"), document.getElementById("quiz")]; //Array of displayable game elements
         displayArray.forEach((elem) => { // For each game element, triggers fading out animation
             elem.classList.remove("hello");
             elem.classList.add("bye-bye");
@@ -32,9 +33,6 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
                     document.dispatchEvent(game3);
                     break;
                 case 3:
-                    document.dispatchEvent(game4);
-                    break;
-                case 4:
                     document.dispatchEvent(end);
                     break;
                 default:
@@ -170,6 +168,12 @@ document.addEventListener("second_game", () => {
             }, 1800); //timeout to let the player long enough time to read
         });
     });
+})
+
+document.addEventListener("third_game", () => {
+    game = 3;
+    document.querySelector("#quiz").style.display = "block";
+    document.querySelector("#quiz").classList.add("hello");
 })
 
 /* while (complete != 1) { //Loop that will run the program until all the games are done

@@ -58,11 +58,77 @@
                 </div>
             </div>
 
-            <div id="qte">
+            <div id="quiz">
+                <div>
+                    <h1>Let's search a little information...</h1>
+                    <h4>Game n°3</h4>
 
+                    <form>
+                        <legend>What proportions of our oceans are damaged by human impact ?</legend>
+                        <br/>
+                        <input name="ecosys" type="radio" id="ecosys1">
+                        <label for="ecosys1">13%</label>
+                        <input name="ecosys" type="radio" id="ecosys2">
+                        <label for="ecosys2">87%</label>
+                        <input name="ecosys" type="radio" id="ecosys3">
+                        <label for="ecosys3">50%</label>
+
+                        <br/>
+                        <legend>What proportion of marine life is threatened by extinction as of 2022 by the IUCN red list ?</legend>
+                        <br/>
+                        <select id="redlist">
+                            <option value="10">10%</option>
+                            <option value="35">35%</option>
+                            <option value="29">29%</option>
+                            <option value="43">43%</option>
+                            <option value="61">61%</option>
+                        </select>
+
+                        <br/>
+                        <legend>Among these, which fishing practices are dangerous ?</legend>
+                        <br/>
+                        <input name="fish1" type="checkbox" value="a" id="a">
+                        <label for="a">Rod fishing</label>
+                        <br/>
+                        <input name="fish2" type="checkbox" value="b" id="b">
+                        <label for="b">Blast fishing</label>
+                        <br/>
+                        <input name="fish3" type="checkbox" value="c" id="c">
+                        <label for="c">Bottom Trawling</label>
+                        <br/>
+                        <input name="fish4" type="checkbox" value="d" id="d">
+                        <label for="d">Fish trapping</label>
+                        <br/>
+                        <input name="fish5" type="checkbox" value="e" id="e">
+                        <label for="e">Spear fishing</label>
+                        <br/>
+                        <input name="fish6" type="checkbox" value="f" id="f">
+                        <label for="f">Muro-ami</label>
+                    </form>
+
+                    <button id="q_s">Let's see if you succeeded !</button>
+
+                    <fieldset id="results">
+                        <legend>Results</legend>
+
+                        <p>Your score : <span id="q_results"></span>/5</p>
+                        <p id="wgw">What you got wrong :</p>
+
+                        <article>
+                            <p>87% of oceans are damaged by humans.</p>
+                            <p>10% of marine life is threatened by extinction</p>
+                            <p>Rod fishing, fish trapping and spear fishing are not destructive if done moderately to respect ecosystems !</p>
+                            <p>Blast fishing kills indiscriminately wildlife...</p>
+                            <p>Bottom trawling destroys the habitation of many seafaring species.</p>
+                            <p>Muro-ami destroys the habitat of lots of wildlife.</p>
+                        </article>
+
+                        <button id="2end">End...</button>
+                    </fieldset>
+                </div>
             </div>
 
-            <div id="quiz">
+            <div id="end">
 
             </div>
         </section>
