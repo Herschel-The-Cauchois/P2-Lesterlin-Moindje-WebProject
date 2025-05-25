@@ -174,6 +174,110 @@ document.addEventListener("third_game", () => {
     game = 3;
     document.querySelector("#quiz").style.display = "block";
     document.querySelector("#quiz").classList.add("hello");
+    document.querySelector("#results").style.display = "none"; //Make only the quiz appear
+
+    document.querySelector("#q_s").addEventListener("click", () => { // Calculates and drops quiz results
+        const checkboxes = [document.querySelector("#a").checked, document.querySelector("#b").checked, document.querySelector("#c").checked, document.querySelector("#d").checked, document.querySelector("#e").checked, document.querySelector("#f").checked];
+        const radios = [document.querySelector("#ecosys1").checked, document.querySelector("#ecosys2").checked, document.querySelector("#ecosys3").checked];
+        const selected = document.querySelector("#redlist").value; //Retrieves values of each form element
+
+        const EqualTest = (arr) => arr.every(val => val === false); //One liner that avoids doing a foreach loop to check equality of all values to false
+
+        if (EqualTest(checkboxes) || EqualTest(radios)) { // Checks if user didn't leave empty the checkboxes and radio button questions
+            if (document.getElementById("emp") === null) { // If not already present, adds a warning that the input is empty
+                let empty = document.createElement("p");
+                empty.setAttribute('id', "emp")
+                empty.style.color = "red";
+                empty.textContent = "Please fill out all the questions...";
+                document.querySelector("#quiz").appendChild(empty);
+            }
+        } else {
+            if (document.getElementById("emp") !== null) { //Removes warning sign
+                document.getElementById("emp").style.display = "none";
+            }
+
+            console.log("Displaying results");
+            document.getElementById("results").style.display = "block";
+            document.getElementById("results").classList.add("hello");
+
+            let score = 8;
+            let displayed = 0;
+            if (radios[1] === false) { // Substracts points if the answer is false and then displays the according reponse if wrong
+                score -= 1;
+                document.getElementById("rep1").style.display = "block";
+            } else {
+                document.getElementById("rep1").style.display = "none";
+            }
+            if (selected !== "10") {
+                score -= 1;
+                document.getElementById("rep2").style.display = "block";
+            } else {
+                document.getElementById("rep2").style.display = "none";
+            }
+            if (checkboxes[0]) {
+                score -= 1;
+                flag = 1;
+                document.getElementById("rep3").style.display = "block";
+            } else {
+                if (flag === 0) {
+                    document.getElementById("rep3").style.display = "none";
+                }
+            }
+            if (checkboxes[3]) {
+                score -= 1;
+                document.getElementById("rep3").style.display = "block";
+            } else {
+                if (flag === 0) {
+                    document.getElementById("rep3").style.display = "none";
+                }
+            }
+            if (checkboxes[4]) {
+                score -= 1;
+                document.getElementById("rep3").style.display = "block";
+            } else {
+                if (flag === 0) {
+                    document.getElementById("rep3").style.display = "none";
+                }
+            }
+            if (!checkboxes[1]) { // Here if they are not checked, makes the user loses points
+                score -= 1;
+                document.getElementById("rep4").style.display = "block";
+            } else {
+                document.getElementById("rep4").style.display = "none";
+            }
+            if (!checkboxes[2]) {
+                score -= 1;
+                document.getElementById("rep5").style.display = "block";
+            } else {
+                document.getElementById("rep5").style.display = "none";
+            }
+            if (!checkboxes[5]) {
+                score -= 1;
+                document.getElementById("rep6").style.display = "block";
+            } else {
+                document.getElementById("rep6").style.display = "none";
+            }
+
+            if (score === 8) { // Gives a congrats message if all correct !
+                document.querySelector("strong").style.display = "block";
+            } else {
+                document.querySelector("strong").style.display = "none";
+            }
+
+            document.querySelector("#q_results").textContent = score; // Displays score
+        }
+    })
+
+    document.querySelector("#toend").addEventListener("click", () => { // Makes game 3 disappear
+        setTimeout(() => {
+            setTimeout(() => {
+                document.querySelector("#quiz").style.display = "none";
+                document.dispatchEvent(end);
+            }, 1800);
+            document.querySelector("#quiz").classList.remove("hello");
+            document.querySelector("#quiz").classList.add("bye-bye");
+        }, 1800);
+    });
 })
 
 /* while (complete != 1) { //Loop that will run the program until all the games are done

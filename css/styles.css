@@ -187,6 +187,8 @@ fieldset {
 article {
     display: flex;
     text-align: center;
+    justify-content: center;
+    margin-bottom: 1em;
 }
 
 article > p {
