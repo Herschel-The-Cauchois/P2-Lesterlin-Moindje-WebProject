@@ -7,6 +7,10 @@ var ingame = false; // Checks if user is in a game
 //Game method : create events for each game
 
 window.addEventListener("load", function() { //When page fully loaded, puts only html to start the game
+    document.querySelector("footer").style.position = "fixed";
+    document.querySelector("footer").style.bottom = "0";
+    document.querySelector("footer").style.width = "100%";
+
     document.getElementById("inspect").style.display = "none";
     document.getElementById("sliders").style.display = "none";
     document.getElementById("skip").style.display = "none";
@@ -53,6 +57,7 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
 })
 
 document.addEventListener("first_game", () => { //First game event, manages code related to the first game in the chain
+    document.querySelector("footer").style.display = "none";
     console.log("Game starts too !");
     ingame = true;
     game = 1;
@@ -287,6 +292,7 @@ document.addEventListener("final_screen", () => {
     ingame = false;
     document.getElementById("end").style.display = "block";
     document.getElementById("end").classList.add("hello"); // Shows up final screen
+    document.querySelector("footer").style.display = "block";
 
     document.getElementById("sticky").style.display = "none"; // Masks skip game button since else it wouldn't make any sense lol
 })

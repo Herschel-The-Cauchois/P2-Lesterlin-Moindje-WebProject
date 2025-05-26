@@ -318,3 +318,10 @@ tr {
     display: flex;
     justify-content: space-between;
 }
+
+footer {
+    text-align: center;
+    /* position: fixed;
+    bottom: 0;
+    width: 100%;*/
+}
