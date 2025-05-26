@@ -60,7 +60,7 @@ button:hover {
     cursor: pointer;
 }
 
-#inspect, #init, #sliders {
+#inspect, #init, #sliders, #end {
     display: flex;
     align-content: center;
     text-align: center;
@@ -193,4 +193,20 @@ article {
 
 article > p {
     padding: 10px;
+}
+
+#end > div {
+    position: relative;
+    margin: auto;
+}
+
+#lesson {
+    color: red;
+    text-decoration: underline;
+}
+
+#end > div > ol {
+    display: grid;
+    place-items: center;
+    text-align: center;
 }

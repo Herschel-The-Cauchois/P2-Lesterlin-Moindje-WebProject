@@ -10,6 +10,7 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
     document.getElementById("sliders").style.display = "none";
     document.getElementById("skip").style.display = "none";
     document.getElementById("quiz").style.display = "none";
+    document.getElementById("end").style.display = "none";
     document.querySelector("form").reset(); //Resets quiz form
     document.getElementById("init").style.display = "flex"; //Makes initial stuff appear, disappears other sections
     document.getElementById("init").classList.add("hello"); //Appearing animation
@@ -278,6 +279,13 @@ document.addEventListener("third_game", () => {
             document.querySelector("#quiz").classList.add("bye-bye");
         }, 1800);
     });
+})
+
+document.addEventListener("final_screen", () => {
+    document.getElementById("end").style.display = "block";
+    document.getElementById("end").classList.add("hello"); // Shows up final screen
+
+    document.getElementById("sticky").style.display = "none"; // Masks skip game button since else it wouldn't make any sense lol
 })
 
 /* while (complete != 1) { //Loop that will run the program until all the games are done
