@@ -106,18 +106,18 @@ document.addEventListener("second_game", () => {
     document.getElementById("sl_f").style.display = "inline-block";
     document.getElementById("sliders").classList.add("hello");
 
-    document.querySelector("input[name='CO2']").oninput = function() { //Automatic slider value displayer, we need to put it here because we need the page to be loaded
+    document.querySelector("input[id='CO2']").oninput = function() { //Automatic slider value displayer, we need to put it here because we need the page to be loaded
         document.getElementById("CO2disp").textContent = this.value + " ppm"
     }
 
-    document.querySelector("input[name='Acid']").oninput = function() { //Automatic slider value displayer, we need to put it here because we need the page to be loaded
+    document.querySelector("input[id='Acid']").oninput = function() { //Automatic slider value displayer, we need to put it here because we need the page to be loaded
         document.getElementById("Aciddisp").textContent = "-0." + this.value + " pH"
     }
 
     //Threshold for coral death : 500 ppm, -0.426 pH
     document.getElementById("sl_f").addEventListener("click", () => { //On click, retrieves user entered values
-        const answ2a = document.querySelector("input[name='CO2']").value;
-        const answ2b = document.querySelector("input[name='Acid']").value;
+        const answ2a = document.querySelector("input[id='CO2']").value;
+        const answ2b = document.querySelector("input[id='Acid']").value;
         console.log(answ2a);
         console.log(answ2b);
         document.getElementById("sl_f").style.display = "none"; //Removes now useless button
