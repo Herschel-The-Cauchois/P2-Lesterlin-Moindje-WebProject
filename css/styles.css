@@ -293,4 +293,27 @@ article > p {
 
 .explain {
     max-width: 80%;
+
+tr {
+    font-size: 30px;
+}
+
+#stattable {
+    border: 1px blue solid;
+    width: 110%;
+}
+
+tbody, thead {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+tr:nth-child(odd) {
+    background-color: cyan;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
 }
