@@ -1,6 +1,8 @@
 body {
     font-family: "Noto Sans", arial;
-    background-color: rgb(194, 227, 255);
+    background: #C2E3FF;
+    background: linear-gradient(180deg, rgba(194, 227, 255, 1) 0%, rgba(83, 227, 237, 1) 100%);
+    min-height: 1000px;
 }
 
 hr {
@@ -38,6 +40,8 @@ nav a {
 
 #colors img {
     padding: auto; /* gonna have to change this, i'm trying to make the image centered but not the texts but it might not even look good so */
+    height: 90%;
+    width: 90%;
 }
 
 #bluetitle {
@@ -46,6 +50,18 @@ nav a {
 
 #pinktitle {
     color: hotpink;
+}
+
+#deepbluetitle {
+    color: blue;
+}
+
+#beigetitle {
+    color: rgb(255, 229, 126);
+}
+
+#greentitle {
+    color: aquamarine;
 }
 
 button {
@@ -210,3 +226,53 @@ article > p {
     place-items: center;
     text-align: center;
 }
+
+#headstat {
+    padding: auto auto 15px auto;
+    display: flex;
+    flex-direction: row;
+}
+
+#headstat p {
+    font-size: 50px;
+    color: white;
+}
+
+#headstattext {
+    display: flex;
+    align-items: center;
+    margin: 0px 0px 0px 75px;
+    width: 800px;
+}
+
+#dolphin {
+    padding: 60px 0px 0px 0px;
+}
+
+#dolphin img {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+}
+
+#dolphin p {
+    color: rgb(26, 145, 250);
+    margin: 0;
+}
+
+#headabout {
+    padding: 0px 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#headabout img {
+    height: 25%;
+    width: 25%;
+}
+
+#headabout h2 {
+    font-size: 50px;
+}
+
