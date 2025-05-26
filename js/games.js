@@ -202,7 +202,7 @@ document.addEventListener("third_game", () => {
             document.getElementById("results").classList.add("hello");
 
             let score = 8;
-            let displayed = 0;
+            let flag = 0;
             if (radios[1] === false) { // Substracts points if the answer is false and then displays the according reponse if wrong
                 score -= 1;
                 document.getElementById("rep1").style.display = "block";
