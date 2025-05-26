@@ -3,6 +3,7 @@ const game2 = new Event("second_game");
 const game3 = new Event("third_game");
 const end = new Event("final_screen");
 var game = 0;
+var ingame = false; // Checks if user is in a game
 //Game method : create events for each game
 
 window.addEventListener("load", function() { //When page fully loaded, puts only html to start the game
@@ -53,6 +54,7 @@ window.addEventListener("load", function() { //When page fully loaded, puts only
 
 document.addEventListener("first_game", () => { //First game event, manages code related to the first game in the chain
     console.log("Game starts too !");
+    ingame = true;
     game = 1;
     document.getElementById("init").classList.remove("hello");
     document.getElementById("init").classList.add("bye-bye"); //Adds init section to bye bye which triggers fading out animation
@@ -282,19 +284,16 @@ document.addEventListener("third_game", () => {
 })
 
 document.addEventListener("final_screen", () => {
+    ingame = false;
     document.getElementById("end").style.display = "block";
     document.getElementById("end").classList.add("hello"); // Shows up final screen
 
     document.getElementById("sticky").style.display = "none"; // Masks skip game button since else it wouldn't make any sense lol
 })
 
-/* while (complete != 1) { //Loop that will run the program until all the games are done
-    switch(game) {
-        case 0:
-            console.log("Tabasco de poire");
-            break;
-        default:
-            console.log("Eh !!!!");
-            break;
+window.addEventListener("beforeunload", (e) => { // If the user leaves during the game phase, triggers confirmation dialog box
+    if (ingame) {
+        e.preventDefault();
+        return "";
     }
-} */ //Deprecated, just to show that i tried to make it work by a while loop but it makes the page crash.
+})

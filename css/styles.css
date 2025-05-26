@@ -276,6 +276,24 @@ article > p {
     font-size: 50px;
 }
 
+#title {
+    text-align: center;
+}
+
+#title > h1 {
+    font-size: 9em;
+    color: rgba(230, 156, 66, 0.784);
+    text-shadow: 0.08em 0.08em 3px blue, 0.15em 0.15em 5px #B2C275;
+    margin-bottom: 0.1em;
+}
+
+#title > h4 {
+    color: rgb(146, 142, 142);
+}
+
+.explain {
+    max-width: 80%;
+
 tr {
     font-size: 30px;
 }
