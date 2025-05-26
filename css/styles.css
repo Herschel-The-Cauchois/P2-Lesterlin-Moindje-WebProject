@@ -39,7 +39,7 @@ nav a {
 }
 
 #colors img {
-    padding: auto; /* gonna have to change this, i'm trying to make the image centered but not the texts but it might not even look good so */
+    margin: auto; /* gonna have to change this, i'm trying to make the image centered but not the texts but it might not even look good so */
     height: 90%;
     width: 90%;
 }
@@ -69,14 +69,14 @@ button {
     color: white;
     padding: 1em;
     border-radius: 4px;
-    border-color: rgb(153, 145, 234);
+    border-color: rgba(153, 145, 234, 0.86);
 }
 
 button:hover {
     cursor: pointer;
 }
 
-#inspect, #init {
+#inspect, #init, #sliders, #end {
     display: flex;
     align-content: center;
     text-align: center;
@@ -88,8 +88,12 @@ button:hover {
     margin: auto;
     position: absolute;
     top: 50%;
-    left: 33%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
+    left: 25%; /* OH MY GOD SOMETHING THAT CENTERS HORIZONTALLY ! */
     transform: translateY(-50%);
+}
+
+#sliders > div {
+    margin: auto;
 }
 
 @keyframes slide-off {
@@ -99,6 +103,16 @@ button:hover {
 
     to {
         opacity: 0;
+    }
+}
+
+@keyframes slide-on {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 100%;
     }
 }
 
@@ -125,8 +139,96 @@ input[type="text"] {
     animation: slide-off 2s;
 }
 
+.hello {
+    animation: slide-on 2s;
+}
+
+label {
+    text-decoration: underline;
+}
+
+#CO2disp, #Aciddisp {
+    text-decoration: none;
+}
+
+#sl_f {
+    background-color: azure;
+    color: black;
+    margin-top: 1em;
+}
+
+#sticky {
+    position: fixed;
+    bottom: 0.5em;
+}
+
+#skip {
+    background-color: gray;
+    color: white;
+}
+
+form > p {
+    margin-top: 1em;
+    margin-bottom: 0.1em;
+}
+
+select {
+    margin-top: 0;
+    text-align: center;
+    margin: auto;
+    width: 40%;
+}
+
+#q_s {
+    margin-top: 1em;
+}
+
+fieldset {
+    margin: auto;
+    text-align: center;
+    border-radius: 4px;
+    margin-bottom: 3em;
+    margin-top: 1em;
+}
+
+#wgw {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+#q_results {
+    color: brown;
+}
+
+article {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+article > p {
+    padding: 10px;
+}
+
+#end > div {
+    position: relative;
+    margin: auto;
+}
+
+#lesson {
+    color: red;
+    text-decoration: underline;
+}
+
+#end > div > ol {
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+
 #headstat {
-    padding: auto auto 15px auto;
+    margin: auto auto 15px auto;
     display: flex;
     flex-direction: row;
 }
