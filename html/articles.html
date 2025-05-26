@@ -38,13 +38,118 @@
 
             <div id="inspect">
                 <div>
-                    <h1>Intriguing question that begs to be answered</h1>
-                    <h4>Game n°2</h4>
-                    <input type="text">
+                    <h1>Can you find on the page the name of an almost extinct specie ?</h1>
+                    <h4>Game n°1</h4>
+                    <!-- This text shall be useful for your quest, keep its spaces : "0x76 0x61 0x71 0x75 0x69 0x74 0x61" -->
+                    <input type="text" id="2text">
                     <button id="inspect_f">Send</button>
                 </div>
             </div>
+
+            <div id="sliders">
+                <div>
+                    <h1>Let's move those sliders, shall we ?</h1>
+                    <h4>Game n°2</h4>
+                    <input name="CO2" type="range" min="450" max="670" value="450" class="slideee"><br/>
+                    <label for="CO2">CO2 concentration : <span id="CO2disp"></span></label><br/>
+                    <input name="Acid" type="range" min="100" max="700" value="350" class="slideee"><br/>
+                    <label for="Acid">Acidification : <span id="Aciddisp"></span></label><br/>
+                    <button id="sl_f">Submit</button>
+                </div>
+            </div>
+
+            <div id="quiz">
+                <div>
+                    <h1>Let's search a little information...</h1>
+                    <h4>Game n°3</h4>
+
+                    <form>
+                        <legend>What proportions of our oceans are damaged by human impact ?</legend>
+                        <br/>
+                        <input name="ecosys" type="radio" id="ecosys1">
+                        <label for="ecosys1">13%</label>
+                        <input name="ecosys" type="radio" id="ecosys2">
+                        <label for="ecosys2">87%</label>
+                        <input name="ecosys" type="radio" id="ecosys3">
+                        <label for="ecosys3">50%</label>
+
+                        <br/>
+                        <legend>What proportion of marine life is threatened by extinction as of 2022 by the IUCN red list ?</legend>
+                        <br/>
+                        <select id="redlist">
+                            <option value="10">10%</option>
+                            <option value="35">35%</option>
+                            <option value="29">29%</option>
+                            <option value="43">43%</option>
+                            <option value="61">61%</option>
+                        </select>
+
+                        <br/>
+                        <legend>Among these, which fishing practices are dangerous ?</legend>
+                        <br/>
+                        <input name="fish1" type="checkbox" value="a" id="a">
+                        <label for="a">Rod fishing</label>
+                        <br/>
+                        <input name="fish2" type="checkbox" value="b" id="b">
+                        <label for="b">Blast fishing</label>
+                        <br/>
+                        <input name="fish3" type="checkbox" value="c" id="c">
+                        <label for="c">Bottom Trawling</label>
+                        <br/>
+                        <input name="fish4" type="checkbox" value="d" id="d">
+                        <label for="d">Fish trapping</label>
+                        <br/>
+                        <input name="fish5" type="checkbox" value="e" id="e">
+                        <label for="e">Spear fishing</label>
+                        <br/>
+                        <input name="fish6" type="checkbox" value="f" id="f">
+                        <label for="f">Muro-ami</label>
+                    </form>
+
+                    <button id="q_s">Let's see if you succeeded !</button>
+
+                    <fieldset id="results">
+                        <legend>Results</legend>
+
+                        <p>Your score : <span id="q_results"></span>/8</p>
+                        <p id="wgw">What you got wrong :</p>
+
+                        <article>
+                            <p id="rep1">87% of oceans are damaged by humans.</p>
+                            <p id="rep2">10% of marine life is threatened by extinction</p>
+                            <p id="rep3">Rod fishing, fish trapping and spear fishing are not destructive if done moderately to respect ecosystems !</p>
+                            <p id="rep4">Blast fishing kills indiscriminately wildlife...</p>
+                            <p id="rep5">Bottom trawling destroys the habitation of many seafaring species.</p>
+                            <p id="rep6">Muro-ami destroys the habitat of lots of wildlife.</p>
+                            <strong>Congrats ! You got it all correct</strong>
+                        </article>
+
+                        <button id="toend">End...</button>
+                    </fieldset>
+                </div>
+            </div>
+
+            <div id="end">
+                <div>
+                    <h1>Thanks for playing !</h1>
+                    <p>We hope that you have learned a thing or two during those games, but the most important is to remember the point : <span id="lesson">sea wildlife is under threat, and we must act to save it.</span> </p>
+                    <p>Sources (will open new tab) :</p>
+                    <ol>
+                        <li><a target="_blank" href="https://earth.org/endangered-species-in-the-ocean/">Endangerment of the Vaquita</a></li>
+                        <li><a target="_blank" href="https://co2.earth/2100-projections">2100 CO2 projections</a></li>
+                        <li><a target="_blank" href="https://fondationbiodiversite.fr/wp-content/uploads/2021/10/ACIDOSCOPE_FINAL.pdf">Projections acidification of oceans</a></li>
+                        <li><a target="_blank" href="https://aslopubs.onlinelibrary.wiley.com/doi/pdf/10.4319/lo.2007.52.2.0716">Study about bleaching corals following environment</a></li>
+                        <li><a target="_blank" href="https://www.globalcitizen.org/en/content/87-of-worlds-oceans-are-dying-climate-change/">87% of world oceans are dying</a></li>
+                        <li><a target="_blank" href="https://www.reuters.com/business/environment/nearly-10-marine-life-threatened-with-extinction-red-list-2022-12-09/">Reuters 10% of marine life threatened</a></li>
+                        <li><a target="_blank" href="https://en.wikipedia.org/wiki/Destructive_fishing_practices">Wikipedia destructive fishing practices</a></li>
+                    </ol>
+                </div>
+            </div>
         </section>
+
+        <div id="sticky">
+            <button id="skip">Skip game</button>
+        </div>
 
     </body>
 </html>
